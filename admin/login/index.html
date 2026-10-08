@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Entrar · Vingadores Burguer</title><link rel="stylesheet" href="../admin.css"></head>
+<body class="login"><div class="login-box">
+  <img src="../../assets/logo-round.png" alt="Vingadores Burguer"><h1 style="margin-top:14px">Vingadores Burguer</h1><p class="muted">Área administrativa</p>
+  <form id="form">
+    <label>Usuário<input id="u" autocomplete="username" required></label>
+    <label>Senha<input id="p" type="password" autocomplete="current-password" required></label>
+    <button id="go" type="submit">Entrar</button>
+  </form>
+  <div id="already" hidden><p>Você já está conectado.</p><p><a href="../">Ir para o painel</a></p><button id="out" type="button" class="danger">Sair da conta</button></div>
+  <p id="msg" class="err"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="../../config.js"></script>
+<script>
+const C=window.VB_CONFIG||{},$=s=>document.querySelector(s);
+if(!C.SUPABASE_URL){$("#msg").textContent="Configure o arquivo config.js (veja o README)."}else{
+const sb=window.supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY);
+const isAdmin=async s=>!!(await sb.from("usuarios_admin").select("id").eq("id",s.user.id).maybeSingle()).data;
+(async()=>{const{data:{session}}=await sb.auth.getSession();if(session&&await isAdmin(session)){$("#form").hidden=true;$("#already").hidden=false}})();
+$("#out").onclick=async()=>{await sb.auth.signOut();location.reload()};
+$("#form").onsubmit=async e=>{e.preventDefault();const b=$("#go"),m=$("#msg");m.textContent="";b.disabled=true;b.textContent="Entrando…";
+  const u=$("#u").value.trim().toLowerCase();
+  const email=u.includes("@")?u:u+"@"+C.ADMIN_EMAIL_DOMAIN;
+  const{data,error}=await sb.auth.signInWithPassword({email:email,password:$("#p").value});
+  if(error||!await isAdmin(data.session)){if(!error)await sb.auth.signOut();m.textContent=error?"Usuário ou senha inválidos.":"Esta conta não tem acesso ao painel.";b.disabled=false;b.textContent="Entrar";return}
+  location.replace("../")};}
+</script></body></html>

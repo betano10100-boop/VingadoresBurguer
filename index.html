@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vingadores Burguer — hambúrguer artesanal feito com qualidade e muito sabor. Entregamos na sua região.">
+  <title>Vingadores Burguer</title>
+  <link rel="icon" type="image/png" href="assets/logo-round.png">
+  <link rel="apple-touch-icon" href="assets/logo-round.png">
+  <meta name="theme-color" content="#0c1015">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vingadores Burguer — O Retorno">
+  <meta property="og:description" content="Hambúrguer artesanal feito com qualidade e muito sabor. Peça pelo site e receba em casa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor-glow"></div>
+
+  <header class="header" id="header">
+    <a class="brand" href="#home" aria-label="Vingadores Burguer">
+      <img src="assets/logo-round.png" alt="Vingadores Burguer — O Retorno">
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a class="active" href="#home">Início</a>
+      <a href="#products">Cardápio</a>
+      <a href="#about">Sobre Nós</a>
+      <a href="#contact">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="register" id="adminBtn" href="admin/" hidden>Admin</a>
+      <button class="register" id="authBtn">Entrar</button>
+      <button class="register cart-btn" id="cartBtn" aria-label="Abrir carrinho">🛒 <b id="cartCount">0</b></button>
+      <button class="outline-btn small" data-open-order>CHAME AQUI</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-lines"></div>
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">VINGADORES<br>BURGUER</p>
+        <p class="hero-text">
+          <strong>Vingadores — O Retorno</strong><br>
+          Hambúrguer artesanal feito com qualidade e muito sabor.<br>
+          Entregamos na sua região.<br>
+          Peça o seu e experimente o verdadeiro sabor artesanal.
+        </p>
+        <p class="open-status" id="openStatus" aria-live="polite"></p>
+        <button class="outline-btn" data-open-order>CHAME AQUI</button>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="neon-orbit orbit-one"></div>
+        <div class="neon-orbit orbit-two"></div>
+        <div class="burger-image"></div>
+      </div>
+      <div class="scroll-hint">ROLE <span></span></div>
+    </section>
+
+    <section class="products section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">NOSSO CARDÁPIO</p>
+          <h2>Escolha o seu <span>sabor</span></h2>
+        </div>
+        <p>Hambúrguer artesanal feito com qualidade e muito sabor.</p>
+      </div>
+
+      <div class="menu-tabs" id="menuTabs"></div>
+      <p class="menu-intro" id="menuIntro"></p>
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-photo"><img src="assets/about.webp" alt="Os fundadores do Vingadores Burguer preparando hambúrgueres na chapa"></div>
+      <div class="about-copy">
+        <p class="eyebrow">NOSSA HISTÓRIA</p>
+        <h2>Um sonho que <span>voltou a viver.</span></h2>
+        <p>Em 2018, ainda desempregados, eu e o Jr decidimos transformar um sonho em realidade: criar nossa própria lanchonete, inicialmente apenas com delivery e inspirada nos nomes de heróis.</p>
+        <p>Mas, em maio de 2019, nosso pequeno ficou muito doente e precisou de toda a nossa atenção. Foram mais de 40 dias no hospital e, ao voltarmos para casa, decidimos deixar aquele sonho adormecer.</p>
+        <p>Durante anos, nossos amigos sempre diziam: “Voltem com os Vingadores!”. Até que, em abril de 2025, Deus colocou um trailer em nossa porta. Vimos ali uma nova oportunidade de resgatar aquele sonho.</p>
+        <p>Começamos no trailer e, em apenas um ano, conquistamos nossa loja com dois compartimentos. Hoje, seguimos sonhando com um espaço ainda melhor.</p>
+        <p>A caminhada não é fácil. Existem lutas, dificuldades e momentos em que pensamos em desistir. Mas seguimos persistindo, porque acreditamos na nossa capacidade e sabemos que aquele sonho que um dia adormeceu ainda tem muito para viver.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div>
+        <p class="eyebrow">PRONTO PARA A NOITE?</p>
+        <h2>Sua mesa. Seu hambúrguer. <span>Sua noite.</span></h2>
+        <p class="cta-addr">📍 <strong>Rua Jaqueira, 44</strong><br>Coelho Neto, Rio de Janeiro – RJ</p>
+        <div class="hours" id="hours">
+          <p class="hours-title">🕖 Horário de funcionamento</p>
+          <ul>
+            <li data-d="3"><span>Quarta-feira</span><b>19:30 às 23:00</b></li>
+            <li data-d="4"><span>Quinta-feira</span><b>19:30 às 23:00</b></li>
+            <li data-d="5"><span>Sexta-feira</span><b>19:30 às 00:00</b></li>
+            <li data-d="6"><span>Sábado</span><b>19:30 às 00:00</b></li>
+            <li data-d="0"><span>Domingo</span><b>19:30 às 23:00</b></li>
+            <li class="off" data-d="1,2"><span>Segunda e terça</span><b>Fechado</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta-btns">
+        <button class="outline-btn" data-open-order>CHAME AQUI</button>
+        <a class="outline-btn" href="https://www.google.com/maps/search/?api=1&query=Rua+Jaqueira+44+Coelho+Neto+Rio+de+Janeiro+RJ" target="_blank" rel="noopener">📍 VER NO MAPA</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="assets/logo-round.png" alt="Vingadores Burguer">
+      <span>VINGADORES BURGUER</span>
+    </div>
+    <p>© <span id="year"></span> Vingadores Burguer. Todos os direitos reservados.</p>
+    <!-- Redes sociais: para ativar, coloque o link real em cada href e remova estes marcadores de comentário.
+    <div class="socials">
+      <a href="https://instagram.com/SEU_PERFIL" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://tiktok.com/@SEU_PERFIL" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
+      <a href="https://facebook.com/SEU_PERFIL" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+    </div> -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script id="menu-data" type="application/json">[{"id":"Tradicionais","items":[["Hamburguer","Pão, Carne, Queijo e Batata Palha","8,00"],["X*EGG","Pão, Carne, Ovo, Queijo, Molhos e Batata Palha","10,00"],["Baconzitto","Pão, 2 Carnes, Bacon, Queijo, Milho, Ervilha, Azeitona e Batata Palha","18,00"],["Mix Cheddar","Pão, 2 Carnes, Cheddar, Bacon, Cebola Caramelizada e Cheddar Cremoso","18,00"],["X*TUDO","Pão, Carne, Presunto, Bacon, Calabresa, Ovo, Milho, Ervilha, Picles, Azeitona, Ovo de Codorna…","16,00"],["X Tudinho","Pão, carne, queijo, presunto, bacon, calabresa, molhos e batata palha","14,00"],["Fome Zero","Pão, 2 Carnes, 2 ovos, Presunto, Bacon, Calabresa, Milho, Ervilha, Picles, Azeitona, Piment…","20,00"],["X*Infarto","Pão, 3 Carnes, 2 ovos, Presunto, Bacon, Calabresa, Milho, Ervilha, Picles, Azeitona, Piment…","22,00"],["Predador","Pão, 4 Carnes, 3 ovos, Presunto, Bacon, Calabresa, Milho, Ervilha, Picles, Azeitona, Piment…","26,00"],["Molho Verde","Maionese com ervas","2,50"]]},{"id":"Picanha","intro":"Carne de Picanha","items":[["Baconzitto Picanha","Pão, 2 carnes de Picanha, Bacon, Queijo, Milho, Ervilha, Azeitona e Batata Palha","20,00"],["X*Tudo Picanha","Pão, Carne de Picanha, Presunto, Bacon, Calabresa, Ovo, Milho, Ervilha, Picles, Azeitona…","18,00"],["Fome Zero Picanha","Pão, 2 Carnes de Picanha, 2 ovos, Presunto, Bacon, Calabresa, Milho, Ervilha, Picles, Azeit…","24,00"],["Infarto de Picanha","Pão, 3 Carnes, 2 ovos, Presunto, Bacon, Calabresa, Milho, Ervilha, Picles, Azeitona, Piment…","27,00"]]},{"id":"Artesanais","intro":"Sabores únicos, feito com o toque especial, que só o Artesanal tem. Experimente o sabor de qualidade em cada detalhe.","items":[["Thor","Pão Amarelo, Blend de Frango, Queijo, Cebola Crispy, Bacon e Cheddar Cremoso","16,00"],["Capitão América","Pão Brioche, Blend, Bacon, Calabresa, Cebola Caramelizada, Cheddar Cremoso","20,00"],["Hulk","Pão Verde, Blend, Mussarela, Calabresa, Picles","24,00"],["Pantera Negra","Pão Preto, Blend, Bacon, Calabresa, Cheddar Cremoso, Picles, Cebola Caramelizada","24,00"],["Loki","Pão Australiano, Blend, Mussarela, Presunto, Picles e Calabresa","24,00"],["Homem de Ferro","Pão Vermelho, Blend, Bacon, Calabresa, Cebola Caramelizada, Cebola Crispy e Pimenta Biquin…","24,00"]]},{"id":"Batatas","items":[["Batata Frita Pequena","","7,00"],["Batata Frita Média","","10,00"],["Batata Frita Grande","Batata frita, 3 opções de molho e calabresa","23,00"],["Batata Recheada","Batatas Fritas de 7mm, 3 Molhos, Bacon, Calabresa, Ovo de Codorna, Queijo Ralado, Azeiton…","30,00"]]},{"id":"Bebidas","items":[["Guaraná Natural","","2,00"],["Refrigerante 2 Lt","Fanta Guaraná, Fanta Laranja, Fanta Uva, Guaraná Antártica, Sprite","12,00"],["Coca Cola 2 Lt","Normal e Zero","14,00"],["Refrigerante Lata 350 ml","Fanta Laranja, Coca, Coca Zero, Fanta Uva, Sprite, Guaraná Antártica","6,00"],["Guaraná Antártica","Pet 1 litro","7,00"],["Limonetto e H2O 500 ml","","6,00"]]},{"id":"Combos","items":[["Combo da Fome","2 Fome Zero's + Fritas com Cheddar + Refri 2lt","60,00"],["Combo Galera","4 X-Egg + Fritas + Refri 2lt","55,00"],["Combo Fome Infinita","4 X-Tudo + Fritas Cheddar e Bacon + Refri 2lt","82,00"],["Combo Família","5 Hamburgueres + Refri lt","40,00"],["Combo Baby","Hamburguer + Fritas + Guaraná Natural","16,00"],["Combo Tudo","X-Tudo + Frita + Guaraná Natural","23,00"],["Combo Zero","Fome Zero + Frita + Guaraná Natural","27,00"],["Combo Infartado","Infarto + Frita + Guaraná Natural","29,00"],["Combo Destruidor","Predador + Frita + Guaraná Natural","33,00"],["Combo Artesanal","Burguer de Costela + Fritas + Guaraná Natural","30,00"],["Combo Artesanal de Picanha","Burguer de Picanha + Fritas + Guaraná Natural","33,00"]]}]</script>
+
+  <div class="modal" id="cartModal"><div class="modal-card cart-card">
+    <button class="modal-close" data-close aria-label="Fechar">×</button>
+    <p class="eyebrow">FINALIZAR PEDIDO</p><h2>Seu <span>pedido</span></h2>
+    <p class="closed-note" id="closedNote" hidden></p>
+    <div id="cartList"></div>
+    <p class="sumrow">Subtotal <span id="cartSub">R$ 0,00</span></p>
+    <p class="sumrow" id="feeRow" hidden>Taxa de entrega <span id="cartFee"></span></p>
+    <p class="cart-total">Total <strong id="cartTotal">R$ 0,00</strong></p>
+    <form id="orderForm" novalidate>
+      <fieldset><legend>Seus dados</legend>
+        <label>Nome completo<input name="name" autocomplete="name" placeholder="Como devemos te chamar?" maxlength="120"><small class="fe" data-for="name"></small></label>
+        <label>WhatsApp<input name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(21) 99999-9999"><small class="fe" data-for="phone"></small></label>
+      </fieldset>
+      <fieldset><legend>Endereço de entrega</legend>
+        <div class="g2 g-street">
+          <label>Rua / Avenida<input name="street" autocomplete="address-line1" placeholder="Ex.: Rua Jaqueira" maxlength="150"><small class="fe" data-for="street"></small></label>
+          <label>Número<input name="number" placeholder="Ex.: 44" maxlength="10"><small class="fe" data-for="number"></small></label>
+        </div>
+        <div class="g2">
+          <label>Bairro<select name="bairro" autocomplete="address-level3"><option value="">Carregando bairros…</option></select><small class="fe" data-for="bairro"></small></label>
+          <label><span>Complemento <i>(opcional)</i></span><input name="complement" placeholder="Apto, casa, bloco…" maxlength="80"></label>
+        </div>
+        <p class="hint">Entregamos apenas nos bairros da lista. A taxa de entrega aparece ao escolher o bairro.</p>
+      </fieldset>
+      <fieldset><legend>Forma de pagamento</legend>
+        <div class="pay">
+          <label class="payopt"><input type="radio" name="payment" value="PIX"><span>PIX</span></label>
+          <label class="payopt"><input type="radio" name="payment" value="CARTAO_CREDITO"><span>Cartão de crédito</span></label>
+          <label class="payopt"><input type="radio" name="payment" value="CARTAO_DEBITO"><span>Cartão de débito</span></label>
+          <label class="payopt"><input type="radio" name="payment" value="DINHEIRO"><span>Dinheiro</span></label>
+        </div>
+        <small class="fe" data-for="payment"></small>
+        <div id="troco" hidden><label><span>Troco para quanto? <i>(opcional)</i></span><input name="change" inputmode="decimal" placeholder="Ex.: 50,00"><small class="fe" data-for="change"></small></label></div>
+        <p class="hint" id="payHint"></p>
+      </fieldset>
+      <label><span>Observações <i>(opcional)</i></span><input name="note" placeholder="Ex.: sem cebola, ponto da carne…" maxlength="200"></label>
+      <button class="outline-btn full" type="submit">ENVIAR PEDIDO PELO WHATSAPP</button>
+    </form>
+    <p class="form-message" id="orderMsg" role="status"></p>
+  </div></div>
+
+  <div class="modal" id="authModal"><div class="modal-card">
+    <button class="modal-close" data-close aria-label="Fechar">×</button>
+    <div class="menu-tabs" id="authTabs"><button id="tabLogin" class="on">Entrar</button><button id="tabReg">Cadastrar</button></div>
+    <form id="authForm">
+      <div id="regFields" hidden>
+        <label>Nome<input name="name" placeholder="Seu nome"></label>
+        <label>WhatsApp<input name="phone" placeholder="(21) 90000-0000"></label>
+        <label>Endereço<input name="address" placeholder="Rua, número, bairro"></label>
+      </div>
+      <label><span id="emailLabel">E-mail ou usuário</span><input required type="text" name="email" autocomplete="username" autocapitalize="none" spellcheck="false"></label>
+      <label>Senha<input required type="password" minlength="4" name="pass"></label>
+      <button class="outline-btn full" type="submit" id="authSubmit">ENTRAR</button>
+    </form>
+    <div id="authOut" hidden><p id="authWho"></p><button class="outline-btn full" id="logout">SAIR</button></div>
+    <p class="form-message" id="authMsg"></p>
+    
+  </div></div>
+
+  <div class="modal" id="adminModal"><div class="modal-card wide">
+    <button class="modal-close" data-close aria-label="Fechar">×</button>
+    <p class="eyebrow">ADMINISTRAÇÃO</p><h2>Painel do <span>admin</span></h2>
+    <div class="menu-tabs"><button id="admTabMenu" class="on">Cardápio</button><button id="admTabOrders">Pedidos <b id="ordCount"></b></button><button id="admTabBackup">Backup</button></div>
+    <div id="admMenu">
+      <div id="adminList"></div>
+      <button type="button" class="adm-add" id="admAddCat">+ Categoria</button>
+      <button class="outline-btn full" id="admPublish" style="margin-top:18px">PUBLICAR CARDÁPIO</button>
+    </div>
+    <div id="admOrders" hidden>
+      <p class="cart-total">Pedidos salvos <strong id="ordSum"></strong></p>
+      <form id="ordForm" class="adm-row"><input required name="name" placeholder="Cliente"><input required name="text" placeholder="Pedido (ex.: 2x Hulk, 1x Batata)"><input name="total" placeholder="Total"><button type="submit">Registrar</button></form>
+      <div id="ordList"></div>
+    </div>
+    <div id="admBackup" hidden>
+      <p style="color:var(--muted);line-height:1.6">Salva em um arquivo o cardápio, os pedidos e as contas guardados neste aparelho. Use “Restaurar” para trazer tudo de volta.</p>
+      <div class="backup"><button type="button" id="admExport">Baixar backup</button><label class="filebtn">Restaurar backup<input type="file" accept=".json" id="admImport" hidden></label></div>
+    </div>
+    <p class="form-message" id="admMsg"></p>
+  </div></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
